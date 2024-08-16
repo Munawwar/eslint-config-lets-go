@@ -12,18 +12,7 @@ npm add -D eslint@8 eslint-config-lets-go eslint-plugin-import-x
 
 ## Usage
 
-For ESLint 8 and below:
-```js
-{
-  "extends": ["lets-go"],
-  // Override any of the rules
-  // rules: {
-  //   'no-console': 'warn',
-  // }
-}
-```
-
-For ESLint 8 `eslint.config.js` and 9+:
+(Recommended) For ESLint 8 `eslint.config.js` and 9+:
 ```js
 // eslint.config.js
 const letsGo = require("eslint-config-lets-go/config");
@@ -51,4 +40,15 @@ module.exports = [
     // }
   }
 ];
+```
+
+(Not recommended) For ESLint 8 and below:
+```js
+{
+  "extends": ["lets-go"],
+  // Override any of the rules
+  // rules: {
+  //   'no-console': 'warn',
+  // }
+}
 ```
