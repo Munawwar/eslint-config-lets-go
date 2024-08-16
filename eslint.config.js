@@ -1,4 +1,6 @@
-const letsGo = require("eslint-config-lets-go");
+// eslint.config.js
+const letsGo = require("eslint-config-lets-go/config");
+// eslint-disable-next-line import-x/no-extraneous-dependencies
 const globals = require("globals");
 
 module.exports = [
@@ -6,14 +8,19 @@ module.exports = [
   {
     languageOptions: {
       ecmaVersion: 2023,
-      sourceType: "module",
+      sourceType: "module", // or "commonjs",
       globals: {
+        ...globals.node,
         ...globals.nodeBuiltins,
-        // ...globals.browser,
+        // or ...globals.browser,
       }
     },
+    // Override any of the rules
     // rules: {
     //   'no-console': 'warn',
+    //   'no-shadow': ['error', {
+    //     'allow': ['err', 'resolve', 'reject', 'done']
+    //   }],
     // }
   }
 ];
